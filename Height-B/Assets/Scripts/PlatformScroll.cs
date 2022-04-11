@@ -8,7 +8,7 @@ public class PlatformScroll : MonoBehaviour
     [SerializeField] private GameUIBtnManager gameUIBtnManager;
     [SerializeField] private PlayerBoxCast playerBoxCast;
 
-    [SerializeField] private float speed;
+    public float speed;
 
     private Rigidbody rb;
 

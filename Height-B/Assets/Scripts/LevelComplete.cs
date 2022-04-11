@@ -17,6 +17,10 @@ public class LevelComplete : MonoBehaviour
     private string keyString;
     private bool isComplete;
 
+    //Save Result
+    [SerializeField] private int currentLvl = 1;
+    [SerializeField] private PlatformScroll platformScroll;
+
     void Start()
     {
         keyCount = 0;
@@ -44,13 +48,23 @@ public class LevelComplete : MonoBehaviour
         {
             if (isComplete)
             {
-                SceneManager.LoadScene("MainMenu");
+                StartCoroutine(FinishDelay(other.gameObject));
             }
             else
             {
                 warningTimeout = warningDuration;
             }
         }
+    }
+
+    private IEnumerator FinishDelay(GameObject playerObj)
+    {
+        yield return new WaitForSeconds(0.25f);
+        platformScroll.speed = 0;
+        playerObj.GetComponent<PlayerMovement>().StopMovement();
+        yield return new WaitForSeconds(1.0f);
+        PlayerPrefs.SetInt("CompletedCount", currentLvl+1);
+        SceneManager.LoadScene("LevelSelect");
     }
 
     private void CheckKeyCount ()

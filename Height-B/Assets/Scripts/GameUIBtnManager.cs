@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public class GameUIBtnManager : MonoBehaviour
 {
     //Player Movement
@@ -11,7 +13,8 @@ public class GameUIBtnManager : MonoBehaviour
     public bool increaseJumpHeight = false;
     public bool decreaseJumpHeight = false;
 
-
+    //Pause Game
+    [SerializeField] private GameObject pausePanel;
 
     private void Awake()
     {
@@ -58,5 +61,30 @@ public class GameUIBtnManager : MonoBehaviour
     public void OnHeightDownButtonUp()
     {
         decreaseJumpHeight = false;
+    }
+
+    public void PauseGame()
+    {
+        pausePanel.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void ResumeGame()
+    {
+        pausePanel.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+    public void RetryGame()
+    {
+        Time.timeScale = 1;
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.name);
+    }
+
+    public void LoadScene(string name)
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(name);
     }
 }

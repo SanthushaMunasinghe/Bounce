@@ -26,8 +26,10 @@ public class PlayerMovement : PlayerMain
         LimitVelocity();
     }
 
-    private void FixedUpdate()
+    public void StopMovement()
     {
+        playerRb.detectCollisions = false;
+        playerRb.isKinematic = true;
     }
 
     public void MultiplyForce()
