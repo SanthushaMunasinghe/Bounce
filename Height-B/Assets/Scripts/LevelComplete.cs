@@ -6,15 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class LevelComplete : MonoBehaviour
 {
-    [SerializeField] private GameObject[] keys;
-    public Text keyCountTxt;
+    [SerializeField] private GameObject collectableHolder;
+
+    public Text collectableCountTxt;
     [SerializeField] private GameObject warningTxt;
     private float warningDuration = 2.0f;
     private float warningTimeout;
 
-    public int keyCount;
-    public int totalKeys;
-    private string keyString;
+    public float collectableCount;
+    public float totalCollectables;
+
+    private float starCount = 0;
+
+    private string countString;
     private bool isComplete;
 
     //Save Result
@@ -23,22 +27,23 @@ public class LevelComplete : MonoBehaviour
 
     void Start()
     {
-        keyCount = 0;
-        totalKeys = keys.Length;
+        collectableCount = 0;
+        for (int i = 0; i < collectableHolder.transform.childCount; i++)
+        {
+            totalCollectables++;
+        }
     }
 
     void Update()
     {
         CheckKeyCount();
         ActivateWarning();
-
-        DisplayKeyCount();
     }
 
     private void DisplayKeyCount()
     {
-        keyString = keyCount + "/" + totalKeys;
-        keyCountTxt.text = keyString;
+        countString = Mathf.Round((collectableCount / totalCollectables) * 100) + "%";
+        collectableCountTxt.text = countString;
     }
 
 
@@ -49,6 +54,7 @@ public class LevelComplete : MonoBehaviour
             if (isComplete)
             {
                 StartCoroutine(FinishDelay(other.gameObject));
+                Debug.Log(starCount);
             }
             else
             {
@@ -69,11 +75,28 @@ public class LevelComplete : MonoBehaviour
 
     private void CheckKeyCount ()
     {
-        if (keyCount >= keys.Length)
+        if (collectableCount >= Mathf.Round(totalCollectables * 0.25f))
         {
             isComplete = true;
             gameObject.GetComponent<MeshRenderer>().enabled = true;
+
+            if (collectableCount >= Mathf.Round(totalCollectables * 0.5f))
+            {
+                starCount = 1;
+            }
+            
+            if (collectableCount >= Mathf.Round(totalCollectables * 0.75f))
+            {
+                starCount = 2;
+            }
+            
+            if (collectableCount >= totalCollectables)
+            {
+                starCount = 3;
+            }
         }
+
+        DisplayKeyCount();
     }
 
     private void ActivateWarning()

@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WhiteVolumeLight
+  m_Name: RedVolumeLight
   m_Shader: {fileID: -6465566751694194690, guid: 096afcc005fa6f84a91a55e62d2bc6c9,
     type: 3}
   m_ShaderKeywords: 
@@ -91,7 +91,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_07f3664969d54a5cbf56bce6cccdc8f9: 100
-    - Vector1_5e097903dd1a4a359d7c179506a25f33: 5
+    - Vector1_5e097903dd1a4a359d7c179506a25f33: 22
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -119,10 +119,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_7af4f6e5e16f4815a9275ef087972d14: {r: 766.9961, g: 766.9961, b: 766.9961,
-        a: 1}
-    - Color_f5c31d810a274f83bfb68017a6ed8273: {r: 4.2870936, g: 4.2870936, b: 4.2870936,
-        a: 1}
+    - Color_7af4f6e5e16f4815a9275ef087972d14: {r: 1024, g: 0, b: 0, a: 1}
+    - Color_f5c31d810a274f83bfb68017a6ed8273: {r: 5.723607, g: 0, b: 0, a: 1}
     - Vector3_360cea62122946bbb2a9e4e4f58e6f15: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

@@ -33,7 +33,7 @@ public class KeyScript : MonoBehaviour
     {
         if (other.tag == "Player" && !isActivated)
         {
-            levelComplete.keyCount++;
+            //levelComplete.keyCount++;
             //gameObject.GetComponent<Renderer>().sharedMaterial.SetFloat("FresnelPower", 1);
             isActivated = true;
             StartCoroutine(DestroyObj());

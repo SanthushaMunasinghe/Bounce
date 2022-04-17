@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-3536961719237062196
+--- !u!114 &-1156264767907297660
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WhiteVolumeLight
-  m_Shader: {fileID: -6465566751694194690, guid: 096afcc005fa6f84a91a55e62d2bc6c9,
+  m_Name: New Material
+  m_Shader: {fileID: -6465566751694194690, guid: 4b043b40cb6154f4e9378f16296de715,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -90,8 +90,6 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_07f3664969d54a5cbf56bce6cccdc8f9: 100
-    - Vector1_5e097903dd1a4a359d7c179506a25f33: 5
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -119,11 +117,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_7af4f6e5e16f4815a9275ef087972d14: {r: 766.9961, g: 766.9961, b: 766.9961,
-        a: 1}
-    - Color_f5c31d810a274f83bfb68017a6ed8273: {r: 4.2870936, g: 4.2870936, b: 4.2870936,
-        a: 1}
-    - Vector3_360cea62122946bbb2a9e4e4f58e6f15: {r: 0, g: 0, b: 0, a: 0}
+    - Color_2cfed57db63e4aeb84b43a5ecbb08244: {r: 1, g: 1, b: 1, a: 0.09411765}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
