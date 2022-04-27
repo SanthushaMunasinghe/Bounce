@@ -1,2 +1,2 @@
-# Height-B
+# Bounce
 Bouncing ball game
